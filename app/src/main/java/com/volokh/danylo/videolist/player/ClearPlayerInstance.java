@@ -1,11 +1,11 @@
 package com.volokh.danylo.videolist.player;
 
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManagerCallback;
+import com.volokh.danylo.videolist.adapter.interfaces.VideoPlayerCallback;
 import com.volokh.danylo.videolist.ui.VideoPlayerView;
 
 public class ClearPlayerInstance extends PlayerMessage {
 
-    public ClearPlayerInstance(VideoPlayerView videoPlayerView, VideoPlayerManagerCallback callback) {
+    public ClearPlayerInstance(VideoPlayerView videoPlayerView, VideoPlayerCallback callback) {
         super(videoPlayerView, callback);
     }
 

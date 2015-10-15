@@ -1,7 +1,7 @@
 package com.volokh.danylo.videolist.player;
 
 import com.volokh.danylo.videolist.Config;
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManagerCallback;
+import com.volokh.danylo.videolist.adapter.interfaces.VideoPlayerCallback;
 import com.volokh.danylo.videolist.ui.VideoPlayerView;
 import com.volokh.danylo.videolist.utils.Logger;
 
@@ -10,9 +10,9 @@ public abstract class PlayerMessage implements Message{
     private static final String TAG = PlayerMessage.class.getSimpleName();
     private static final boolean SHOW_LOGS = Config.SHOW_LOGS;
     private final VideoPlayerView mCurrentPlayer;
-    private final VideoPlayerManagerCallback mCallback;
+    private final VideoPlayerCallback mCallback;
 
-    public PlayerMessage(VideoPlayerView currentPlayer, VideoPlayerManagerCallback callback) {
+    public PlayerMessage(VideoPlayerView currentPlayer, VideoPlayerCallback callback) {
         mCurrentPlayer = currentPlayer;
         mCallback = callback;
     }

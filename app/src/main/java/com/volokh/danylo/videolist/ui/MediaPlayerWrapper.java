@@ -129,7 +129,6 @@ public abstract class MediaPlayerWrapper
     private void onPrepareError(IOException ex) {
         if (SHOW_LOGS) Logger.err(TAG, "catch IO exception [" + ex + "]");
         // might happen because of lost internet connection
-//      TODO: if (SHOW_LOGS) Logger.err(TAG, "catch exception, is Network Connected [" + Utils.isNetworkConnected());
         mState.set(State.ERROR);
         if(mListener != null){
             mListener.onErrorMainThread(1, -1004); //TODO: remove magic numbers. Find a way to get actual error

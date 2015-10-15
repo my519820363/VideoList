@@ -2,14 +2,14 @@ package com.volokh.danylo.videolist.player;
 
 import android.content.res.AssetFileDescriptor;
 
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManagerCallback;
+import com.volokh.danylo.videolist.adapter.interfaces.VideoPlayerCallback;
 import com.volokh.danylo.videolist.ui.VideoPlayerView;
 
 public class SetAssetsDataSourceMessage extends SetDataSourceMessage{
 
     private final AssetFileDescriptor mAssetFileDescriptor;
 
-    public SetAssetsDataSourceMessage(VideoPlayerView videoPlayerView, AssetFileDescriptor assetFileDescriptor, VideoPlayerManagerCallback callback) {
+    public SetAssetsDataSourceMessage(VideoPlayerView videoPlayerView, AssetFileDescriptor assetFileDescriptor, VideoPlayerCallback callback) {
         super(videoPlayerView, callback);
         mAssetFileDescriptor = assetFileDescriptor;
     }

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import com.volokh.danylo.videolist.adapter.holders.VideoViewHolder;
 import com.volokh.danylo.videolist.adapter.items.VideoItem;
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManager;
 
 import java.util.List;
 
@@ -16,12 +15,10 @@ import java.util.List;
  */
 public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
-    private final VideoPlayerManager mVideoPlayerManager;
     private final List<VideoItem> mList;
     private final Context mContext;
 
-    public VideoRecyclerViewAdapter(VideoPlayerManager videoPlayerManager, Context context, List<VideoItem> list){
-        mVideoPlayerManager = videoPlayerManager;
+    public VideoRecyclerViewAdapter(Context context, List<VideoItem> list) {
         mContext = context;
         mList = list;
     }
@@ -36,7 +33,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoViewHold
     @Override
     public void onBindViewHolder(VideoViewHolder viewHolder, int position) {
         VideoItem videoItem = mList.get(position);
-        videoItem.update(position, viewHolder, mVideoPlayerManager);
+        videoItem.update(position, viewHolder);
     }
 
     @Override

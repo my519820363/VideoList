@@ -6,19 +6,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.volokh.danylo.videolist.adapter.holders.VideoViewHolder;
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManager;
 import com.volokh.danylo.videolist.adapter.items.VideoItem;
 
 import java.util.List;
 
 public class VideoListViewAdapter extends BaseAdapter {
 
-    private final VideoPlayerManager mVideoPlayerManager;
     private final List<VideoItem> mList;
     private final Context mContext;
 
-    public VideoListViewAdapter(VideoPlayerManager videoPlayerManager, Context context, List<VideoItem> list){
-        mVideoPlayerManager = videoPlayerManager;
+    public VideoListViewAdapter(Context context, List<VideoItem> list) {
         mContext = context;
         mList = list;
     }
@@ -44,14 +41,13 @@ public class VideoListViewAdapter extends BaseAdapter {
         VideoItem videoItem = mList.get(position);
 
         View resultView;
-        if(convertView == null){
-
+        if (convertView == null) {
             resultView = videoItem.createView(parent, mContext.getResources().getDisplayMetrics().widthPixels);
         } else {
             resultView = convertView;
         }
 
-        videoItem.update(position, (VideoViewHolder) resultView.getTag(), mVideoPlayerManager);
+        videoItem.update(position, (VideoViewHolder) resultView.getTag());
         return resultView;
     }
 

@@ -1,23 +1,16 @@
 package com.volokh.danylo.videolist.player;
 
-import android.view.View;
-
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManagerCallback;
+import com.volokh.danylo.videolist.adapter.interfaces.VideoPlayerCallback;
 import com.volokh.danylo.videolist.ui.VideoPlayerView;
-import com.volokh.danylo.videolist.adapter.visibilityutils.CurrentItemMetaData;
 
 public class SetNewViewForPlayback extends PlayerMessage {
 
-    private final CurrentItemMetaData mCurrentItemMetaData;
     private final VideoPlayerView mCurrentPlayer;
-    private final View mListItemView;
-    private final VideoPlayerManagerCallback mCallback;
+    private final VideoPlayerCallback mCallback;
 
-    public SetNewViewForPlayback(CurrentItemMetaData currentItemMetaData, VideoPlayerView videoPlayerView, View listItemView, VideoPlayerManagerCallback callback) {
+    public SetNewViewForPlayback(VideoPlayerView videoPlayerView, VideoPlayerCallback callback) {
         super(videoPlayerView, callback);
-        mCurrentItemMetaData = currentItemMetaData;
         mCurrentPlayer = videoPlayerView;
-        mListItemView = listItemView;
         mCallback = callback;
     }
 
@@ -28,7 +21,6 @@ public class SetNewViewForPlayback extends PlayerMessage {
 
     @Override
     protected void performAction(VideoPlayerView currentPlayer) {
-        mCallback.setCurrentItem(mCurrentItemMetaData, mCurrentPlayer, mListItemView);
     }
 
     @Override

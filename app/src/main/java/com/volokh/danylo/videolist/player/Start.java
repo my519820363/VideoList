@@ -1,7 +1,7 @@
 package com.volokh.danylo.videolist.player;
 
 import com.volokh.danylo.videolist.Config;
-import com.volokh.danylo.videolist.player.manager.VideoPlayerManagerCallback;
+import com.volokh.danylo.videolist.adapter.interfaces.VideoPlayerCallback;
 import com.volokh.danylo.videolist.ui.VideoPlayerView;
 import com.volokh.danylo.videolist.utils.Logger;
 
@@ -12,7 +12,7 @@ public class Start extends PlayerMessage{
 
     private PlayerMessageState mResultPlayerMessageState;
 
-    public Start(VideoPlayerView videoPlayerView, VideoPlayerManagerCallback callback) {
+    public Start(VideoPlayerView videoPlayerView, VideoPlayerCallback callback) {
         super(videoPlayerView, callback);
     }
 

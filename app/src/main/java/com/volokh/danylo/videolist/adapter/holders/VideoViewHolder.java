@@ -6,11 +6,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.volokh.danylo.videolist.R;
-import com.volokh.danylo.videolist.ui.VideoPlayerView;
+import com.volokh.danylo.videolist.ui.MultiPlayVideoView;
 
 
 public class VideoViewHolder extends RecyclerView.ViewHolder{
-    public final VideoPlayerView mPlayer;
+    public final MultiPlayVideoView mPlayer;
     public final View mListItemView; // TODO: remove
     public final TextView mTitle;
     public final ImageView mCover;
@@ -20,7 +20,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder{
     public VideoViewHolder(View view) {
         super(view);
         mListItemView = view;
-        mPlayer = (VideoPlayerView) view.findViewById(R.id.player);
+        mPlayer = (MultiPlayVideoView) view.findViewById(R.id.player);
         mTitle = (TextView) view.findViewById(R.id.title);
         mCover = (ImageView) view.findViewById(R.id.cover);
         mVisibilityPercentsTop = (TextView) view.findViewById(R.id.visibility_percents_top);
